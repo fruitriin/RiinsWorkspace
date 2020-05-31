@@ -16,6 +16,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  router: {
+    mode: 'history'
+  },
   /*
    ** Customize the progress-bar color
    */
