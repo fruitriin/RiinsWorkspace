@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: fruitriin/Riin-sWorkspace
   branch: master
 
 media_folder: static/img
