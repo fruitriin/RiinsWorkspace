@@ -1,3 +1,6 @@
+require("dotenv").config();
+const { API_KEY } = process.env;
+
 export default {
   mode: 'spa',
   /*
@@ -15,6 +18,9 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  },
+  env: {
+    API_KEY
   },
   router: {
     mode: 'history'
@@ -43,7 +49,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+
+  axios: {
+    // extra config e.g
+    // BaseURL: 'https://link-to-API'
+  },
   /*
    ** Build configuration
    */
