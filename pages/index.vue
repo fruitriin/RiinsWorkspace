@@ -27,6 +27,15 @@ export default {
     return {
       items: []
     }
+  },
+  async mounted() {
+    await this.$axios.get(
+      'https://riins-workspace.microcms.io/api/v1/articles',
+      {
+        headers: { 'X-API-KEY': process.env.API_KEY }
+      }
+    )
+    console.log('hoge')
   }
 }
 </script>
