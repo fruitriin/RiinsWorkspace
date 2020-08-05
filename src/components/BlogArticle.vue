@@ -5,7 +5,7 @@
     </nuxt-link>
     <p>{{ getDate }}</p>
     <div v-html="article.bodyShort" />
-    <a @click="showMore = true">もっと見る</a>
+    <a v-if="!showMore" @click="showMore = true">もっと見る</a>
     <div v-if="showMore" v-html="article.bodyDetail" />
   </article>
 </template>
