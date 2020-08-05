@@ -1,7 +1,10 @@
-require("dotenv").config();
-const { API_KEY } = process.env;
+require('dotenv').config()
+const { API_KEY } = process.env
 
 export default {
+  server: {
+    port: 8080
+  },
   mode: 'spa',
   /*
    ** Headers of the page
@@ -41,6 +44,7 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -49,9 +53,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/axios',
-  ],
+  modules: ['@nuxtjs/axios'],
 
   axios: {
     // extra config e.g
