@@ -2,6 +2,7 @@ require('dotenv').config()
 const { API_KEY } = process.env
 
 export default {
+  srcDir: 'src',
   server: {
     port: 8080
   },
