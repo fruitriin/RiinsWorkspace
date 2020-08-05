@@ -1,5 +1,5 @@
 {
-  "name": "Riin-sWorkspace",
+  "name": "RiinsWorkspace",
   "version": "1.0.0",
   "description": "My Blog",
   "author": "Riin Fruit",
@@ -28,6 +28,8 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.13.3",
+    "@nuxt/typescript-build": "^2.0.0",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.0",
