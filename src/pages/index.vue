@@ -1,9 +1,7 @@
 <template>
   <div>
     <div v-for="item in items" :key="item.id">
-      <p>{{ item.id }}</p>
-      <p>{{ item.tags }}</p>
-      <p v-html="item.body" />
+      <BlogArticle :article="item" />
 
       <pre>{{ item }}</pre>
     </div>
@@ -11,7 +9,12 @@
 </template>
 
 <script>
+import BlogArticle from '@/components/BlogArticle'
+
 export default {
+  components: {
+    BlogArticle
+  },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(
       'https://riins-workspace.microcms.io/api/v1/articles',
