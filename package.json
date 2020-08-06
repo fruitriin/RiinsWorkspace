@@ -47,5 +47,31 @@
     "prettier": "^1.19.1",
     "stylelint": "^10.1.0",
     "vue-jest": "^4.0.0-0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "@nuxtjs/eslint-config-typescript",
+      "@nuxtjs",
+      "prettier",
+      "prettier/vue",
+      "plugin:prettier/recommended",
+      "plugin:nuxt/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "vue/no-v-html": "off",
+      "pritter/pritter": {
+        "semi": false,
+        "arrowParens": "always",
+        "singleQuote": true
+      }
+    }
   }
 }
