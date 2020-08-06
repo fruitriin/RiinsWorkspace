@@ -1,5 +1,4 @@
 {
-  "name": "RiinsWorkspace",
   "version": "1.0.0",
   "description": "My Blog",
   "author": "Riin Fruit",
@@ -10,7 +9,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "stylelint": "stylelint --ext .vue,.css,.scss src",
+    "stylelint": "stylelint src/**/*.{css,scss,vue}",
     "test": "jest"
   },
   "lint-staged": {
@@ -46,8 +45,31 @@
     "jest": "^24.1.0",
     "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
-    "stylelint": "^10.1.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.1.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
     "vue-jest": "^4.0.0-0"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      }
+    }
   },
   "eslintConfig": {
     "root": true,
@@ -79,7 +101,7 @@
       "vue/no-v-html": "off"
     }
   },
-  "stylelintConfig": {
+  "stylelint": {
     "extends": [
       "stylelint-config-recommended-scss",
       "stylelint-config-recess-order",
@@ -96,5 +118,22 @@
       "no-descending-specificity": null,
       "font-family-no-missing-generic-family-keyword": null
     }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/$1",
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "moduleFileExtensions": ["js", "vue", "json"],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/components/**/*.vue",
+      "<rootDir>/pages/**/*.vue"
+    ]
   }
 }
