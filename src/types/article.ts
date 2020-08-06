@@ -1,6 +1,6 @@
 export type Article = {
   id: String
-  createddAt: String
+  createdAt: String
   updatedAt: String
   publishedAt: String
   title: String

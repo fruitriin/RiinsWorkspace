@@ -7,29 +7,32 @@
     <div v-html="article.bodyShort" />
     <a v-if="!showMore" @click="showMore = true">もっと見る</a>
     <div v-if="showMore" v-html="article.bodyDetail" />
+    <a v-if="showMore" @click="showMore = false">閉じる</a>
   </article>
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Article } from '@/types/article'
-
+import Vue, { PropType } from "vue"
+import { Article } from "~/types/article"
 export default Vue.extend({
   props: {
     article: {
       type: Object as PropType<Article>,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      showMore: false
+      showMore: false,
     }
   },
   computed: {
-    getDate() {
+    getDate(): String {
       return this.article.createDate || this.article.createdAt
-    }
-  }
+    },
+  },
+  mounted() {
+    this.article
+  },
 })
 </script>
