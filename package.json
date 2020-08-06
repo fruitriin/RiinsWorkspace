@@ -66,12 +66,16 @@
       "prettier"
     ],
     "rules": {
-      "vue/no-v-html": "off",
-      "pritter/pritter": {
-        "semi": false,
-        "arrowParens": "always",
-        "singleQuote": true
-      }
+      "prettier/prettier": [
+        "error",
+        {
+          "semi": false,
+          "arrowParens": "always",
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      ],
+      "vue/no-v-html": "off"
     }
   }
 }
