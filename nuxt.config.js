@@ -4,7 +4,7 @@ const { API_KEY } = process.env
 export default {
   srcDir: 'src',
   server: {
-    port: 8080
+    port: 8080,
   },
   mode: 'spa',
   /*
@@ -18,16 +18,16 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   env: {
-    API_KEY
+    API_KEY,
   },
   router: {
-    mode: 'history'
+    mode: 'history',
   },
   /*
    ** Customize the progress-bar color
@@ -49,7 +49,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -67,6 +67,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    // extend(config, ctx) {},
+  },
 }

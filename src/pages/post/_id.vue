@@ -6,6 +6,6 @@
 
 <script lang="ts">
 export default {
-  asyncData() {}
+  asyncData() {},
 }
 </script>

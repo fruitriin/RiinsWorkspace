@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue"
-import { Article } from "~/types/article"
+import Vue, { PropType } from 'vue'
+import { Article } from '~/types/article'
 export default Vue.extend({
   props: {
     article: {
@@ -30,9 +30,6 @@ export default Vue.extend({
     getDate(): String {
       return this.article.createDate || this.article.createdAt
     },
-  },
-  mounted() {
-    this.article
   },
 })
 </script>

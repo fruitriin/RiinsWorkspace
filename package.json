@@ -10,6 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "stylelint": "stylelint --ext .vue,.css,.scss src",
     "test": "jest"
   },
   "lint-staged": {
@@ -76,6 +77,24 @@
         }
       ],
       "vue/no-v-html": "off"
+    }
+  },
+  "stylelintConfig": {
+    "extends": [
+      "stylelint-config-recommended-scss",
+      "stylelint-config-recess-order",
+      "stylelint-config-prettier"
+    ],
+    "plugins": [
+      "stylelint-prettier",
+      "stylelint-order",
+      "stylelint-scss"
+    ],
+    "rules": {
+      "prettier/prettier": true,
+      "unicode-bom": null,
+      "no-descending-specificity": null,
+      "font-family-no-missing-generic-family-keyword": null
     }
   }
 }

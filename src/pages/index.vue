@@ -13,32 +13,32 @@ import BlogArticle from '@/components/BlogArticle'
 
 export default {
   components: {
-    BlogArticle
+    BlogArticle,
   },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(
       'https://riins-workspace.microcms.io/api/v1/articles',
       {
-        headers: { 'X-API-KEY': process.env.API_KEY }
+        headers: { 'X-API-KEY': process.env.API_KEY },
       }
     )
     return {
-      items: data.contents
+      items: data.contents,
     }
   },
   data() {
     return {
-      items: []
+      items: [],
     }
   },
   async mounted() {
     await this.$axios.get(
       'https://riins-workspace.microcms.io/api/v1/articles',
       {
-        headers: { 'X-API-KEY': process.env.API_KEY }
+        headers: { 'X-API-KEY': process.env.API_KEY },
       }
     )
     console.log('hoge')
-  }
+  },
 }
 </script>
