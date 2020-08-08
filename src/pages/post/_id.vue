@@ -5,9 +5,10 @@
 </template>
 
 <script lang="ts">
-import BlogArticle from '@/components/BlogArticle'
-import ApiArticle from '~/lib/api/ApiArticle'
-export default {
+import Vue from 'vue'
+import BlogArticle from '@/components/BlogArticle.vue'
+import ApiArticle from '@/lib/api/ApiArticle'
+export default Vue.extend({
   components: {
     BlogArticle,
   },
@@ -22,5 +23,5 @@ export default {
       item: null,
     }
   },
-}
+})
 </script>

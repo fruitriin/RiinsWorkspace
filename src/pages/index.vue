@@ -2,17 +2,17 @@
   <div>
     <div v-for="item in items" :key="item.id">
       <BlogArticle :article="item" />
-
-      <pre>{{ item }}</pre>
     </div>
   </div>
 </template>
 
-<script>
-import BlogArticle from '@/components/BlogArticle'
+<script lang="ts">
+import Vue from 'vue'
+import BlogArticle from '@/components/BlogArticle.vue'
 import ApiArticle from '@/lib/api/ApiArticle'
+import { Article } from '@/types/article'
 
-export default {
+export default Vue.extend({
   components: {
     BlogArticle,
   },
@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      items: [],
+      items: [] as Article[],
     }
   },
-}
+})
 </script>
