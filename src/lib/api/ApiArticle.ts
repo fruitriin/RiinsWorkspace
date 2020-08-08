@@ -1,4 +1,5 @@
 import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import type { Article } from '@/types/article'
 
 type options = {
   [key: string]: string | number | null
@@ -21,12 +22,12 @@ class ApiArticle {
     this.$axios.setHeader('X-API-KEY', process.env.API_KEY)
   }
 
-  async getContent(contentId: string) {
+  async getContent(contentId: string): Promise<Article> {
     const res = await this.$axios.get(`/v1/articles/${contentId}`)
     return res.data
   }
 
-  async getContents(options = {} as options) {
+  async getContents(options = {} as options): Promise<Article[]> {
     const params = new URLSearchParams()
     Object.keys(options).forEach((key) => {
       params.append(key, options[key] as string)
