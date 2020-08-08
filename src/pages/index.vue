@@ -10,35 +10,22 @@
 
 <script>
 import BlogArticle from '@/components/BlogArticle'
+import ApiArticle from '@/lib/api/ApiArticle'
 
 export default {
   components: {
     BlogArticle,
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      'https://riins-workspace.microcms.io/api/v1/articles',
-      {
-        headers: { 'X-API-KEY': process.env.API_KEY },
-      }
-    )
+    const api = new ApiArticle($axios)
     return {
-      items: data.contents,
+      items: await api.getContents(),
     }
   },
   data() {
     return {
       items: [],
     }
-  },
-  async mounted() {
-    await this.$axios.get(
-      'https://riins-workspace.microcms.io/api/v1/articles',
-      {
-        headers: { 'X-API-KEY': process.env.API_KEY },
-      }
-    )
-    console.log('hoge')
   },
 }
 </script>
