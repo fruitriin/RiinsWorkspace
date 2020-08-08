@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import { Article } from '~/types/article'
+import { Article } from '@/types/article'
 export default Vue.extend({
   props: {
     article: {
