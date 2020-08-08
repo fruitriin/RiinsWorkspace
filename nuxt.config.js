@@ -6,7 +6,7 @@ export default {
   server: {
     port: 8080,
   },
-  mode: 'spa',
+  mode: 'universal',
   /*
    ** Headers of the page
    */
