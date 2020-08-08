@@ -17,9 +17,9 @@ type options = {
 class ApiArticle {
   private $axios: NuxtAxiosInstance
   constructor($axios: NuxtAxiosInstance) {
+    $axios.setBaseURL('https://riins-workspace.microcms.io/api/')
+    $axios.setHeader('X-API-KEY', process.env.API_KEY)
     this.$axios = $axios
-    this.$axios.setBaseURL('https://riins-workspace.microcms.io/api/')
-    this.$axios.setHeader('X-API-KEY', process.env.API_KEY)
   }
 
   async getContent(contentId: string): Promise<Article> {
