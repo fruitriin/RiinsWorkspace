@@ -44,7 +44,7 @@
     "husky": "^4.0.0",
     "jest": "^24.1.0",
     "lint-staged": "^10.0.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.1.0",
@@ -117,7 +117,8 @@
       "unicode-bom": null,
       "no-descending-specificity": null,
       "font-family-no-missing-generic-family-keyword": null
-    }
+    },
+    "ignoreFiles": ["coverage/**.css"]
   },
   "jest": {
     "moduleNameMapper": {
