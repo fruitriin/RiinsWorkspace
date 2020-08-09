@@ -2,16 +2,16 @@ import { NuxtAxiosInstance } from '@nuxtjs/axios'
 import type { Article } from '@/types/article'
 
 type options = {
-  [key: string]: string | number | null
-  draftKey: string | null
-  limit: number | null
-  offset: number | null
-  orders: string | null
-  q: string
-  fields: string
-  ids: string
-  filters: string
-  depth: number
+  [key: string]: string | number | undefined
+  draftKey?: string
+  limit?: number
+  offset?: number
+  orders?: string
+  q?: string
+  fields?: string
+  ids?: string
+  filters?: string
+  depth?: number
 }
 
 class ApiArticle {
