@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxtjs/axios": "5.10.3",
     "@nuxtjs/dotenv": "1.4.1",
-    "ant-design-vue": "1.6.1",
+    "ant-design-vue": "1.7.2",
     "nuxt": "2.12.2"
   },
   "devDependencies": {
